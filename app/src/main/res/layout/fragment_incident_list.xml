@@ -24,7 +24,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:checked="true"
-                android:text="All" />
+                android:text="All"
+                app:chipCornerRadius="10dp"
+                app:chipMinHeight="32dp"
+                app:chipStartPadding="10dp"
+                app:chipEndPadding="10dp"
+                app:checkedIconVisible="false"
+                app:rippleColor="@color/purple_200" />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chipLow"

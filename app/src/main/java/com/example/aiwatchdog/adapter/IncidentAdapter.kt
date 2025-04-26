@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -46,7 +47,7 @@ class IncidentAdapter(
                 Severity.MEDIUM -> R.color.severity_medium
                 Severity.HIGH -> R.color.severity_high
             }
-            severityChip.setChipBackgroundColorResource(chipColor)
+            severityChip.chipBackgroundColor = ContextCompat.getColorStateList(itemView.context, chipColor)
 
             // Format date
             val isoFormat = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'", Locale.getDefault())
