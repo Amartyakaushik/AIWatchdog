@@ -8,12 +8,14 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.example.aiwatchdog.R
 import com.example.aiwatchdog.adapter.IncidentAdapter
 import com.example.aiwatchdog.model.Severity
+import com.example.aiwatchdog.model.Incident
 import com.example.aiwatchdog.viewmodel.IncidentViewModel
 import com.google.android.material.chip.ChipGroup
 import com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -43,8 +45,9 @@ class IncidentListFragment : Fragment() {
 
     private fun setupRecyclerView(view: View) {
         val recyclerView = view.findViewById<RecyclerView>(R.id.incidentsRecyclerView)
-        adapter = IncidentAdapter { incident ->
-            // TODO: Navigate to detail view
+        adapter = IncidentAdapter { incident: Incident ->
+            val action = IncidentListFragmentDirections.actionListToDetail(incident.id)
+            findNavController().navigate(action)
         }
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(requireContext())

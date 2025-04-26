@@ -11,4 +11,17 @@
         <!-- Add actions for navigation here later -->
     </fragment>
 
+    <fragment
+        android:id="@+id/incidentDetailFragment"
+        android:name="com.example.aiwatchdog.ui.IncidentDetailFragment"
+        android:label="Incident Details">
+        <argument
+            android:name="incidentId"
+            app:argType="integer" />
+    </fragment>
+
+    <action
+        android:id="@+id/action_list_to_detail"
+        app:destination="@id/incidentDetailFragment" />
+
 </navigation> 
