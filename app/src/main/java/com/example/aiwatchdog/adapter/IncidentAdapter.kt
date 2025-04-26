@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.aiwatchdog.R
 import com.example.aiwatchdog.model.Incident
+import com.example.aiwatchdog.model.Severity
 import com.google.android.material.chip.Chip
 import java.time.Instant
 import java.time.ZoneId
@@ -40,6 +41,15 @@ class IncidentAdapter(
             titleTextView.text = incident.title
             severityChip.text = incident.severity.name
             
+            // Set chip color based on severity
+            val chipColor = when (incident.severity) {
+                Severity.LOW -> R.color.severity_low
+                Severity.MEDIUM -> R.color.severity_medium
+                Severity.HIGH -> R.color.severity_high
+            }
+            severityChip.setChipBackgroundColorResource(chipColor)
+
+            // Format date
             val instant = Instant.parse(incident.reported_at)
             val localDateTime = instant.atZone(ZoneId.systemDefault())
             val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm")

@@ -6,10 +6,4 @@ data class Incident(
     val description: String,
     val severity: Severity,
     val reported_at: String
-)
-
-enum class Severity {
-    LOW,
-    MEDIUM,
-    HIGH
-} 
+) 

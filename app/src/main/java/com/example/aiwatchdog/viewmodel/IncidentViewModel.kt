@@ -18,9 +18,13 @@ class IncidentViewModel : ViewModel() {
     private var currentFilter: Severity? = null
 
     init {
-        // Initialize with mock data
+        loadIncidents()
+    }
+
+    fun loadIncidents() {
+        // In a real app, this would load from a repository
         _incidents.value = createMockIncidents()
-        applyFilter(null)
+        applyFilter(currentFilter)
     }
 
     private fun createMockIncidents(): List<Incident> {
@@ -30,21 +34,21 @@ class IncidentViewModel : ViewModel() {
                 "Biased Recommendation Algorithm",
                 "Algorithm consistently favored certain demographics...",
                 Severity.MEDIUM,
-                "2025-03-15T10:00:00Z"
+                "2025-03-15T15:30:00Z"
             ),
             Incident(
                 2,
                 "LLM Hallucination in Critical Info",
                 "LLM provided incorrect safety procedure information...",
                 Severity.HIGH,
-                "2025-04-01T14:30:00Z"
+                "2025-04-01T20:00:00Z"
             ),
             Incident(
                 3,
                 "Minor Data Leak via Chatbot",
                 "Chatbot inadvertently exposed non-sensitive user metadata...",
                 Severity.LOW,
-                "2025-03-20T09:15:00Z"
+                "2025-03-20T14:45:00Z"
             )
         )
     }
