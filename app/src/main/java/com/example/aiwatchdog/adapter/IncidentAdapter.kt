@@ -11,9 +11,8 @@ import com.example.aiwatchdog.R
 import com.example.aiwatchdog.model.Incident
 import com.example.aiwatchdog.model.Severity
 import com.google.android.material.chip.Chip
-import java.time.Instant
-import java.time.ZoneId
-import java.time.format.DateTimeFormatter
+import java.text.SimpleDateFormat
+import java.util.*
 
 class IncidentAdapter(
     private val onItemClick: (Incident) -> Unit
@@ -50,10 +49,11 @@ class IncidentAdapter(
             severityChip.setChipBackgroundColorResource(chipColor)
 
             // Format date
-            val instant = Instant.parse(incident.reported_at)
-            val localDateTime = instant.atZone(ZoneId.systemDefault())
-            val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm")
-            dateTextView.text = formatter.format(localDateTime)
+            val isoFormat = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'", Locale.getDefault())
+            isoFormat.timeZone = TimeZone.getTimeZone("UTC")
+            val date = isoFormat.parse(incident.reported_at)
+            val displayFormat = SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.getDefault())
+            dateTextView.text = date?.let { displayFormat.format(it) } ?: ""
 
             itemView.setOnClickListener { onItemClick(incident) }
         }

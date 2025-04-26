@@ -7,6 +7,8 @@ import com.example.aiwatchdog.model.Incident
 import com.example.aiwatchdog.model.Severity
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
+import java.text.SimpleDateFormat
+import java.util.*
 
 class IncidentViewModel : ViewModel() {
     private val _incidents = MutableLiveData<List<Incident>>()
@@ -65,8 +67,12 @@ class IncidentViewModel : ViewModel() {
     fun addIncident(title: String, description: String, severity: Severity) {
         val currentIncidents = _incidents.value.orEmpty().toMutableList()
         val newId = (currentIncidents.maxOfOrNull { it.id } ?: 0) + 1
-        val timestamp = LocalDateTime.now().format(DateTimeFormatter.ISO_DATE_TIME)
-        
+
+        // Use the same format as the mock data
+        val dateFormat = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'", Locale.getDefault())
+        dateFormat.timeZone = TimeZone.getTimeZone("UTC")
+        val timestamp = dateFormat.format(Date())
+
         val newIncident = Incident(newId, title, description, severity, timestamp)
         currentIncidents.add(newIncident)
         _incidents.value = currentIncidents

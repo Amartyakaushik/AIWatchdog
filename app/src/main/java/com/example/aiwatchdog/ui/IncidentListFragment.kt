@@ -7,7 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -21,7 +21,7 @@ import com.google.android.material.chip.ChipGroup
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class IncidentListFragment : Fragment() {
-    private val viewModel: IncidentViewModel by viewModels()
+    private val viewModel: IncidentViewModel by activityViewModels()
     private lateinit var adapter: IncidentAdapter
     private lateinit var swipeRefreshLayout: SwipeRefreshLayout
     
@@ -80,7 +80,9 @@ class IncidentListFragment : Fragment() {
 
     private fun setupFab(view: View) {
         view.findViewById<FloatingActionButton>(R.id.fabAddIncident).setOnClickListener {
-            // TODO: Navigate to add incident screen
+            findNavController().navigate(
+                IncidentListFragmentDirections.actionListToAdd()
+            )
         }
     }
 

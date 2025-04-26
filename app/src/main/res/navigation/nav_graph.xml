@@ -20,8 +20,17 @@
             app:argType="integer" />
     </fragment>
 
+    <fragment
+        android:id="@+id/addIncidentFragment"
+        android:name="com.example.aiwatchdog.ui.AddIncidentFragment"
+        android:label="Report New Incident" />
+
     <action
         android:id="@+id/action_list_to_detail"
         app:destination="@id/incidentDetailFragment" />
+
+    <action
+        android:id="@+id/action_list_to_add"
+        app:destination="@id/addIncidentFragment" />
 
 </navigation> 
