@@ -27,6 +27,14 @@ class IncidentAdapter(
 
     override fun onBindViewHolder(holder: IncidentViewHolder, position: Int) {
         holder.bind(getItem(position))
+        holder.itemView.alpha = 0f
+        holder.itemView.translationY = 50f
+        holder.itemView.animate()
+            .alpha(1f)
+            .translationY(0f)
+            .setDuration(400)
+            .setStartDelay((position * 50).toLong())
+            .start()
     }
 
     class IncidentViewHolder(
@@ -41,13 +49,15 @@ class IncidentAdapter(
             titleTextView.text = incident.title
             severityChip.text = incident.severity.name
             
-            // Set chip color based on severity
-            val chipColor = when (incident.severity) {
-                Severity.LOW -> R.color.severity_low
-                Severity.MEDIUM -> R.color.severity_medium
-                Severity.HIGH -> R.color.severity_high
+            // Set chip color and icon based on severity
+            val (chipColor, chipIcon) = when (incident.severity) {
+                Severity.LOW -> Pair(R.color.severity_low, R.drawable.android)
+                Severity.MEDIUM -> Pair(R.color.severity_medium, R.drawable.android)
+                Severity.HIGH -> Pair(R.color.severity_high, R.drawable.android)
             }
             severityChip.chipBackgroundColor = ContextCompat.getColorStateList(itemView.context, chipColor)
+            severityChip.chipIcon = ContextCompat.getDrawable(itemView.context, chipIcon)
+            severityChip.isChipIconVisible = true
 
             // Format date
             val isoFormat = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'", Locale.getDefault())

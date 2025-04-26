@@ -25,10 +25,10 @@
                 android:layout_height="wrap_content"
                 android:checked="true"
                 android:text="All"
-                app:chipCornerRadius="10dp"
-                app:chipMinHeight="32dp"
-                app:chipStartPadding="10dp"
-                app:chipEndPadding="10dp"
+                app:chipCornerRadius="12dp"
+                app:chipMinHeight="36dp"
+                app:chipStartPadding="14dp"
+                app:chipEndPadding="14dp"
                 app:checkedIconVisible="false"
                 app:rippleColor="@color/purple_200" />
 
