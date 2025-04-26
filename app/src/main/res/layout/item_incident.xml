@@ -54,7 +54,7 @@
             android:id="@+id/dateTextView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:textColor="@color/white"
+            android:textColor="#607D8B"
             android:alpha="0.7"
             android:textSize="14sp"
             app:layout_constraintStart_toStartOf="parent"
