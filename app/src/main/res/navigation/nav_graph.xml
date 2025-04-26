@@ -1,20 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
     app:startDestination="@id/incidentListFragment">
 
     <fragment
         android:id="@+id/incidentListFragment"
         android:name="com.example.aiwatchdog.ui.IncidentListFragment"
-        android:label="AI Safety Incidents">
-        <!-- Add actions for navigation here later -->
+        android:label="Incidents"
+        tools:layout="@layout/fragment_incident_list">
+        <action
+            android:id="@+id/action_list_to_detail"
+            app:destination="@id/incidentDetailFragment" />
+        <action
+            android:id="@+id/action_list_to_add"
+            app:destination="@id/addIncidentFragment" />
     </fragment>
 
     <fragment
         android:id="@+id/incidentDetailFragment"
         android:name="com.example.aiwatchdog.ui.IncidentDetailFragment"
-        android:label="Incident Details">
+        android:label="Incident Details"
+        tools:layout="@layout/fragment_incident_detail">
         <argument
             android:name="incidentId"
             app:argType="integer" />
@@ -23,14 +31,7 @@
     <fragment
         android:id="@+id/addIncidentFragment"
         android:name="com.example.aiwatchdog.ui.AddIncidentFragment"
-        android:label="Report New Incident" />
-
-    <action
-        android:id="@+id/action_list_to_detail"
-        app:destination="@id/incidentDetailFragment" />
-
-    <action
-        android:id="@+id/action_list_to_add"
-        app:destination="@id/addIncidentFragment" />
+        android:label="Report New Incident"
+        tools:layout="@layout/fragment_add_incident"/>
 
 </navigation> 

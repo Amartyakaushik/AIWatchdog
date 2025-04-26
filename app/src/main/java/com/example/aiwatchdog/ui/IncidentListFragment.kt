@@ -15,10 +15,10 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.example.aiwatchdog.R
 import com.example.aiwatchdog.adapter.IncidentAdapter
 import com.example.aiwatchdog.model.Severity
-import com.example.aiwatchdog.model.Incident
 import com.example.aiwatchdog.viewmodel.IncidentViewModel
 import com.google.android.material.chip.ChipGroup
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import androidx.appcompat.app.AppCompatActivity
 
 class IncidentListFragment : Fragment() {
     private val viewModel: IncidentViewModel by activityViewModels()
@@ -43,11 +43,17 @@ class IncidentListFragment : Fragment() {
         observeViewModel()
     }
 
+    override fun onResume() {
+        super.onResume()
+        (activity as? AppCompatActivity)?.supportActionBar?.title = "Incidents"
+    }
+
     private fun setupRecyclerView(view: View) {
         val recyclerView = view.findViewById<RecyclerView>(R.id.incidentsRecyclerView)
-        adapter = IncidentAdapter { incident: Incident ->
-            val action = IncidentListFragmentDirections.actionListToDetail(incident.id)
-            findNavController().navigate(action)
+        adapter = IncidentAdapter { incident ->
+            findNavController().navigate(
+                IncidentListFragmentDirections.actionListToDetail(incident.id)
+            )
         }
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
@@ -57,7 +63,6 @@ class IncidentListFragment : Fragment() {
         swipeRefreshLayout = view.findViewById(R.id.swipeRefreshLayout)
         swipeRefreshLayout.setColorSchemeResources(R.color.purple_500)
         swipeRefreshLayout.setOnRefreshListener {
-            // Simulate refresh
             viewModel.loadIncidents()
             Handler(Looper.getMainLooper()).postDelayed({
                 swipeRefreshLayout.isRefreshing = false
