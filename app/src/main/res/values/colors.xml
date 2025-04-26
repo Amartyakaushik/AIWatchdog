@@ -10,4 +10,12 @@
     <color name="severity_low">#4CAF50</color>
     <color name="severity_medium">#FFC107</color>
     <color name="severity_high">#F44336</color>
+    <color name="primary">#17407B</color>
+    <color name="primaryVariant">#102B4E</color>
+    <color name="secondary">#4CAF50</color>
+    <color name="background">#F5F5F5</color>
+    <color name="surface">#FFFFFF</color>
+    <color name="onPrimary">#FFFFFF</color>
+    <color name="onBackground">#222222</color>
+    <color name="onSurface">#222222</color>
 </resources>
