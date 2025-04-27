@@ -57,12 +57,15 @@ A modern Android app for tracking, reporting, and viewing AI safety incidents, b
 
 ---
 
+
 ## Screenshots
 ---
-![SplashScreen.jpg](..%2F..%2FOneDrive%2FDesktop%2FSemester%20Courses%2FDRIVE%2FSplashScreen.jpg)
-![IncidentList.jpg](..%2F..%2FOneDrive%2FDesktop%2FSemester%20Courses%2FDRIVE%2FIncidentList.jpg)
-![Description.jpg](..%2F..%2FOneDrive%2FDesktop%2FSemester%20Courses%2FDRIVE%2FDescription.jpg)
-![AddAlert.jpg](..%2F..%2FOneDrive%2FDesktop%2FSemester%20Courses%2FDRIVE%2FAddAlert.jpg)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/31e1348e-671a-440d-adb3-717626715686" width="200" height="400" />
+  <img src="https://github.com/user-attachments/assets/62440521-f1b1-49cd-8041-476b4366745c" width="200" height="400" />
+  <img src="https://github.com/user-attachments/assets/f28deb9a-378e-44d3-937c-63e233820af2" width="200" height="400" />
+  <img src="https://github.com/user-attachments/assets/405bb57a-c245-4577-9be9-b42fb31241b2" width="200" height="400" />
+</p>
 
 ## Notes
 
