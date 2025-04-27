@@ -103,7 +103,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             app:cardCornerRadius="14dp"
-            app:cardElevation="6dp"
+            app:cardElevation="0dp"
             app:cardBackgroundColor="@color/surface"
             app:layout_constraintTop_toBottomOf="@id/descriptionHeader"
             app:layout_constraintStart_toStartOf="parent"
