@@ -34,4 +34,4 @@ class AlertAdapter(private var alerts: List<Alert>) : RecyclerView.Adapter<Alert
         alerts = newAlerts
         notifyDataSetChanged()
     }
-} 
+}
