@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
@@ -54,5 +55,25 @@ class IncidentDetailFragment : Fragment() {
                 view.findViewById<TextView>(R.id.detailDate).text = date?.let { displayFormat.format(it) } ?: ""
             }
         }
+        val icon = view.findViewById<ImageView>(R.id.incidentIcon)
+        val title = view.findViewById<TextView>(R.id.detailTitle)
+        val chip = view.findViewById<Chip>(R.id.detailSeverity)
+        val card = view.findViewById<View>(R.id.descriptionCard)
+
+        val viewsToAnimate = listOf(icon, title, chip, card)
+        viewsToAnimate.forEachIndexed { i, v ->
+            v.alpha = 0f
+            v.animate()
+                .alpha(1f)
+                .setDuration(400)
+                .setStartDelay((i * 100).toLong())
+                .start()
+        }
+        card.translationY = 40f
+        card.animate()
+            .translationY(0f)
+            .setDuration(400)
+            .setStartDelay(300)
+            .start()
     }
 }
