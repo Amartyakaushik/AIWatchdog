@@ -47,7 +47,6 @@ class IncidentDetailFragment : Fragment() {
                         Severity.HIGH -> R.color.severity_high
                     }
                 )
-                // Date formatting
                 val isoFormat = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'", Locale.getDefault())
                 isoFormat.timeZone = TimeZone.getTimeZone("UTC")
                 val date = isoFormat.parse(it.reported_at)
