@@ -3,12 +3,8 @@ package com.example.aiwatchdog
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
-import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
-import com.example.aiwatchdog.ui.IncidentListFragment // Alerts tab
-import com.example.aiwatchdog.ui.AddIncidentFragment   // Create Alert tab
-import com.example.aiwatchdog.ui.HomeFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {

@@ -7,6 +7,8 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.aiwatchdog.R
 
+data class Alert(val title: String, val description: String, val time: String)
+
 class AlertAdapter(private var alerts: List<Alert>) : RecyclerView.Adapter<AlertAdapter.AlertViewHolder>() {
     class AlertViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val title: TextView = view.findViewById(R.id.alertTitle)
