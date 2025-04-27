@@ -51,9 +51,9 @@ class IncidentAdapter(
             
             // Set chip color and icon based on severity
             val (chipColor, chipIcon) = when (incident.severity) {
-                Severity.LOW -> Pair(R.color.severity_low, R.drawable.android)
-                Severity.MEDIUM -> Pair(R.color.severity_medium, R.drawable.android)
-                Severity.HIGH -> Pair(R.color.severity_high, R.drawable.android)
+                Severity.LOW -> Pair(R.color.severity_low, R.drawable.ic_alert_medium)
+                Severity.MEDIUM -> Pair(R.color.severity_medium, R.drawable.ic_alert_low)
+                Severity.HIGH -> Pair(R.color.severity_high, R.drawable.ic_high_alert)
             }
             severityChip.chipBackgroundColor = ContextCompat.getColorStateList(itemView.context, chipColor)
             severityChip.chipIcon = ContextCompat.getDrawable(itemView.context, chipIcon)
