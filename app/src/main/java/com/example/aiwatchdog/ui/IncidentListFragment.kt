@@ -45,7 +45,7 @@ class IncidentListFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
-        (activity as? AppCompatActivity)?.supportActionBar?.title = "Incidents"
+        (activity as? AppCompatActivity)?.supportActionBar?.title = "Home"
     }
 
     private fun setupRecyclerView(view: View) {

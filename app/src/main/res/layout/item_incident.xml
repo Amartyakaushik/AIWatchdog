@@ -43,7 +43,7 @@
             app:chipStartPadding="10dp"
             app:chipEndPadding="10dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/titleTextView"
             app:layout_constraintBottom_toTopOf="@id/dateTextView"
             tools:text="HIGH" />
 
