@@ -72,7 +72,13 @@ class IncidentListFragment : Fragment() {
 
     private fun setupFilterChips(view: View) {
         val chipGroup = view.findViewById<ChipGroup>(R.id.filterChipGroup)
-        chipGroup.setOnCheckedChangeListener { _, checkedId ->
+        chipGroup.setOnCheckedChangeListener { group, checkedId ->
+            for (i in 0 until group.childCount) {
+                val chip = group.getChildAt(i)
+                chip.animate().scaleX(if (chip.id == checkedId) 1.1f else 1f)
+                    .scaleY(if (chip.id == checkedId) 1.1f else 1f)
+                    .setDuration(150).start()
+            }
             val severity = when (checkedId) {
                 R.id.chipLow -> Severity.LOW
                 R.id.chipMedium -> Severity.MEDIUM
