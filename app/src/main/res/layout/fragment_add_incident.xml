@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#D3D3D3">
+    android:background="@color/surface">
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/titleInputLayout"
@@ -17,8 +17,8 @@
         app:boxCornerRadiusTopEnd="8dp"
         app:boxCornerRadiusBottomStart="8dp"
         app:boxCornerRadiusBottomEnd="8dp"
-        app:boxStrokeColor="#B0B0B0"
-        app:boxBackgroundColor="#F5F5F5"
+        app:boxStrokeColor="@color/box_stroke"
+        app:boxBackgroundColor="@color/edit_box"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -32,7 +32,7 @@
             android:layout_height="wrap_content"
             android:inputType="text"
             android:hint="Alert Title"
-            android:textColor="@color/black"
+            android:textColor="@color/onSurface"
             android:textColorHint="@color/hintColor"/>
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -42,7 +42,7 @@
         android:layout_height="wrap_content"
         android:text="Severity"
         android:textStyle="bold"
-        android:textColor="#222"
+        android:textColor="@color/onSurface"
         android:textSize="16sp"
         app:layout_constraintTop_toBottomOf="@id/titleInputLayout"
         app:layout_constraintStart_toStartOf="parent"
@@ -68,7 +68,7 @@
             android:layout_weight="1"
             android:text="Low"
             android:buttonTint="#4CAF50"
-            android:textColor="#222"
+            android:textColor="@color/onSurface"
             android:background="@android:color/transparent"/>
 
         <RadioButton
@@ -78,7 +78,7 @@
             android:layout_weight="1"
             android:text="Medium"
             android:buttonTint="#FFC107"
-            android:textColor="#222"
+            android:textColor="@color/onSurface"
             android:background="@android:color/transparent"/>
 
         <RadioButton
@@ -88,7 +88,7 @@
             android:layout_weight="1"
             android:text="High"
             android:buttonTint="#F44336"
-            android:textColor="#222"
+            android:textColor="@color/onSurface"
             android:background="@android:color/transparent"/>
     </RadioGroup>
 
@@ -104,8 +104,8 @@
         app:boxCornerRadiusTopEnd="8dp"
         app:boxCornerRadiusBottomStart="8dp"
         app:boxCornerRadiusBottomEnd="8dp"
-        app:boxStrokeColor="#B0B0B0"
-        app:boxBackgroundColor="#F5F5F5"
+        app:boxStrokeColor="@color/box_stroke"
+        app:boxBackgroundColor="@color/edit_box"
         app:layout_constraintTop_toBottomOf="@id/severityRadioGroup"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -120,7 +120,7 @@
             android:minLines="3"
             android:hint="Description"
             android:gravity="top"
-            android:textColor="@color/black"
+            android:textColor="@color/onSurface"
             android:textColorHint="@color/hintColor"/>
     </com.google.android.material.textfield.TextInputLayout>
 

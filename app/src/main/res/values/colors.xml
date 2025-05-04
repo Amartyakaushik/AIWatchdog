@@ -14,7 +14,7 @@
     <color name="primaryVariant">#102B4E</color>
     <color name="secondary">#4CAF50</color>
     <color name="background">#F5F5F5</color>
-    <color name="surface">#FFFFFF</color>
+    <color name="surface">#FFFF</color>
     <color name="onPrimary">#FFFFFF</color>
     <color name="onBackground">#222222</color>
     <color name="onSurface">#222222</color>
@@ -23,4 +23,8 @@
     <color name="chip_selected_bg">#17407B</color>
     <color name="chip_unselected_text">#ffffff</color>
     <color name="chip_selected_text">#FFFFFF</color>
+    <color name="ai_icon_color">#17407B</color>
+    <color name="edit_box">#F5F5F5</color>
+    <color name="box_stroke">#B0B0B0</color>
+    <color name="text_color">#000</color>
 </resources>
